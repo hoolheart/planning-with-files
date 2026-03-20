@@ -6,7 +6,7 @@ if (Test-Path "task_plan.md") {
     Write-Output "[planning-with-files] ACTIVE PLAN — current state:"
     Get-Content "task_plan.md" -TotalCount 50 -Encoding UTF8
     Write-Output ""
-    Write-Output "--- recent progress ---"
+    Write-Output "=== recent progress ==="
     if (Test-Path "progress.md") {
         Get-Content "progress.md" -Tail 20 -Encoding UTF8
     }

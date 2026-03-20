@@ -105,7 +105,7 @@ FINDINGS
 # --- Test 1: Hook injects plan content (not just advisory) ---
 echo "Test 1: UserPromptSubmit hook injects plan content"
 cd "$TESTDIR"
-OUTPUT=$(bash -c 'if [ -f task_plan.md ]; then echo "[planning-with-files] ACTIVE PLAN — current state:"; head -50 task_plan.md; echo ""; echo "--- recent progress ---"; tail -20 progress.md 2>/dev/null; echo ""; echo "[planning-with-files] Read findings.md for research context. Continue from the current phase."; fi' 2>/dev/null)
+OUTPUT=$(bash -c 'if [ -f task_plan.md ]; then echo "[planning-with-files] ACTIVE PLAN — current state:"; head -50 task_plan.md; echo ""; echo "=== recent progress ==="; tail -20 progress.md 2>/dev/null; echo ""; echo "[planning-with-files] Read findings.md for research context. Continue from the current phase."; fi' 2>/dev/null)
 
 if echo "$OUTPUT" | grep -q "Build a REST API"; then
     echo "  PASS: Hook output contains the goal"
